@@ -129,11 +129,11 @@ class TwitterReader:
 	def mentionWithString(self, strToMatch, subStr):
 		for i in range(0, len(self.mentionsTimeLine)):
 			if subStr:
-				if strToMatch in self.homeTimeLine[i]['text'].lower():
-					return self.homeTimeLine[i]['text']
+				if strToMatch in self.mentionsTimeLine[i]['text'].lower():
+					return self.mentionsTimeLine[i]['text']
 			else:
 				if self.mentionsTimeLine[i]['text'].lower() == strToMatch:
-					return self.homeTimeLine[i]['text']
+					return self.mentionsTimeLine[i]['text']
 		return False
 
 	def tweetWithString(self, strToMatch, subStr):
@@ -149,11 +149,11 @@ class TwitterReader:
 	def directMessageWithString(self, strToMatch, subStr):
 		for i in range(0, len(self.directMessagesTimeLine)):
 			if subStr:
-				if strToMatch in self.homeTimeLine[i]['text'].lower():
-					return self.homeTimeLine[i]['text']
+				if strToMatch in self.directMessagesTimeLine[i]['text'].lower():
+					return self.directMessagesTimeLine[i]['text']
 			else:
 				if self.directMessagesTimeLine[i]['text'].lower() == strToMatch:
-					return self.homeTimeLine[i]['text']
+					return self.directMessagesTimeLine[i]['text']
 		return False
 
 	# Update handling (with interval checking)
